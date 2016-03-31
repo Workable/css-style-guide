@@ -1,0 +1,296 @@
+linters:
+  # color: #000 !important; instead of color: #000!important;
+  BangFormat:
+    enabled: true
+    space_before_bang: true
+    space_after_bang: false
+
+  # .block__element instead of .block__element__subelement
+  BemDepth:
+    enabled: true
+    max_elements: 1
+
+  # border: none instead of border: 0
+  BorderZero:
+    enabled: true
+    convention: none
+
+  # color: #0f0; instead of color: green;
+  ColorKeyword:
+    enabled: true
+
+  # color: $body-color; instead of color: #0f0;
+  # DISABLED for now
+  ColorVariable:
+    enabled: false
+
+  # prefer // instead of /* ... */ comments
+  # DISABLED because we minify anyway
+  Comment:
+    enabled: false
+
+  # Reports leftover @debug statements
+  DebugStatement:
+    enabled: true
+
+  # Correct order: @extend, @include without inner @content, properties, @include with inner @content, nested rule sets
+  DeclarationOrder:
+    enabled: true
+
+  # Provide a reason when disabling specific linters
+  DisableLinterReason:
+    enabled: true
+
+  # Warns you about duplicate properties
+  DuplicateProperty:
+    enabled: true
+
+  # Place @else elements in same line as preceding curly brace
+  ElsePlacement:
+    enabled: true
+    style: same_line # or 'new_line'
+
+  # Leave one empty line between rule, function and mixin declarations
+  # Ignore single line blocks (e.g. for icon background-position)
+  EmptyLineBetweenBlocks:
+    enabled: true
+    ignore_single_line_blocks: true
+
+  # Warns about empty rule sets
+  EmptyRule:
+    enabled: true
+
+  # Warns about @extend directives
+  # DISABLED because we use @extend sometimes
+  ExtendDirective:
+    enabled: false
+
+  # Ensures you add a final new line in files for better diffs
+  # If you use Sublime Text, add "ensure_newline_at_eof_on_save": true to your settings to ensure that
+  FinalNewline:
+    enabled: true
+    present: true
+
+  # color: #f2e; instead of color: #ff22ee;
+  HexLength:
+    enabled: true
+    style: short 
+
+  # color: #fff; instead of color: #FFF;
+  HexNotation:
+    enabled: true
+    style: lowercase 
+
+  # Ensures hex colours are valid
+  HexValidation:
+    enabled: true
+
+  # Avoid IDs for styling
+  # Read more at http://screwlewse.com/2010/07/dont-use-id-selectors-in-css/
+  IdSelector:
+    enabled: true
+
+  # Warns against using !important 
+  # DISABLED because we use !important sometimes
+  ImportantRule:
+    enabled: false
+
+  # @import "foo/bar"; instead of @import "foo/_bar.scss";
+  ImportPath:
+    enabled: true
+    leading_underscore: false
+    filename_extension: false
+
+  # Always use 2 spaces for indentation
+  # If you use Sublime Text, add "tab_size": 2 to your settings to ensure that
+  Indentation:
+    enabled: true
+    allow_non_nested_indentation: false
+    character: space 
+    width: 2
+
+  # margin: 0.5em; instead of margin: .5em;
+  LeadingZero:
+    enabled: true
+    style: include_zero
+
+  # Warns when you have duplicate selectors in a style sheet and enforces nesting e.g.
+  MergeableSelector:
+    enabled: true
+    force_nesting: true
+
+  # Function, mixin, variable and placeholder names should be all lowercase & hyphenated
+  # TODO
+  NameFormat:
+    enabled: true
+    allow_leading_underscore: true
+    convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
+
+  # Don't nest more than 4 levels deep
+  NestingDepth:
+    enabled: true
+    max_depth: 4
+    ignore_parent_selectors: false
+
+  # Always use placeholder selectors in @extend
+  # DISABLED because sometimes we need to extend classes
+  PlaceholderInExtend:
+    enabled: false
+
+  # Limit the number of properties in a rule set
+  # DISABLED because we need lots of properties in some rule sets (e.g. buttons)
+  PropertyCount:
+    enabled: false
+    include_nested: false
+    max_properties: 10
+
+  # Enforces sorting of properties in a strict order
+  # DISABLED for now
+  PropertySortOrder:
+    enabled: false
+    ignore_unspecified: false
+    min_properties: 2
+    separate_groups: false
+
+  # Check spelling of properties
+  # Add extra properties to the extra_properties white list as needed
+  PropertySpelling:
+    enabled: true
+    extra_properties: []
+
+  # Configure which units are allowed for property values
+  PropertyUnits:
+    enabled: true
+    global: [
+      'ch', 'em', 'ex', 'rem',                 # Font-relative lengths
+      'cm', 'in', 'mm', 'pc', 'pt', 'px', 'q', # Absolute lengths
+      'vh', 'vw', 'vmin', 'vmax',              # Viewport-percentage lengths
+      'deg', 'grad', 'rad', 'turn',            # Angle
+      'ms', 's',                               # Duration
+      'Hz', 'kHz',                             # Frequency
+      'dpi', 'dpcm', 'dppx',                   # Resolution
+      '%']                                     # Other
+    properties: 
+      border: ['px']
+
+  # Avoid qualifying elements in selectors like ul.list, div#thing
+  # Only allow stuff like a[href="place"] because we use them all over
+  # DISABLED for now but please don't abuse it
+  QualifyingElement:
+    enabled: false
+    allow_element_with_attribute: true
+    allow_element_with_class: false
+    allow_element_with_id: false
+
+  # Don't write selectors with a depth of applicability greater than 2 
+  # e.g. .one .two .three { }
+  SelectorDepth:
+    enabled: true
+    max_depth: 4
+
+  # BEM Naming convention for selectors
+  SelectorFormat:
+    enabled: true
+    convention: hyphenated_BEM
+
+  # margin: 1px; instead of margin: 1px 1px 1px 1px;
+  Shorthand:
+    enabled: true
+    allowed_shorthands: [1, 2, 3]
+
+  # Each property in a rule set should be in its own line
+  SingleLinePerProperty:
+    enabled: true
+    allow_single_line_rule_sets: true
+
+  # Each selector should be in its own line
+  SingleLinePerSelector:
+    enabled: true
+
+  # color: rgba(0, 0, 0, 0.1); instead of color: rgba(0,0,0,0.1);
+  SpaceAfterComma:
+    enabled: true
+
+  # margin: 0; instead of margin:0;
+  SpaceAfterPropertyColon:
+    enabled: true
+    style: one_space 
+
+  # margin: 0; instead of margin : 0;
+  SpaceAfterPropertyName:
+    enabled: true
+
+  # $my-var: 0; instead of $my-var : 0;
+  SpaceAfterVariableName:
+    enabled: true
+
+  # margin: 5px + 5px; instead of margin: 5px+5px;
+  SpaceAroundOperator:
+    enabled: true
+    style: one_space 
+
+  # Opening braces should be preceded by a single space
+  # .list { } instead of .list{ }
+  SpaceBeforeBrace:
+    enabled: true
+    style: space 
+    allow_single_line_padding: true
+
+  # color: rgba(0, 0, 0, 0.1); instead of color: rgba( 0, 0, 0, 0.1 );
+  SpaceBetweenParens:
+    enabled: true
+    spaces: 0
+
+  # content: 'hello'; instead of content: "hello";
+  StringQuotes:
+    enabled: true
+    style: single_quotes
+
+  # Always add a trailing semicolon without a space before it
+  TrailingSemicolon:
+    enabled: true
+
+  # Reports lines containing trailing whitespace
+  TrailingWhitespace:
+    enabled: true
+
+  # margin: 0.5em; instead of margin: 0.500em;
+  TrailingZero:
+    enabled: false
+
+  # margin: 1em; instead of margin: 1.0em;
+  UnnecessaryMantissa:
+    enabled: true
+
+  # Do not use parent selector references (&) when they would otherwise be unnecessary.
+  UnnecessaryParentReference:
+    enabled: true
+
+  # URLs should not contain protocols or domain names.
+  UrlFormat:
+    enabled: true
+
+  # URLs should always be enclosed within quotes.
+  UrlQuotes:
+    enabled: true
+
+  # Use variables instead of literals for properties
+  # DISABLED for now
+  VariableForProperty:
+    enabled: false
+    properties: []
+
+  # Avoid writing vendor prefixes
+  # DISABLED for now
+  VendorPrefix:
+    enabled: false
+    identifier_list: base
+    additional_identifiers: []
+    excluded_identifiers: []
+
+  # margin: 0; instead of margin: 0px;
+  ZeroUnit:
+    enabled: true
+
+  Compass::*:
+    enabled: false
