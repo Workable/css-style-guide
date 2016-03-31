@@ -10,12 +10,12 @@ A coding style guide is an essential tool to keep our code maintainable and scal
 
 Table of Contents | 
 ------------ | 
-[Syntax & Formatting](https://github.com/Workable/workable/wiki/HTML-&-CSS-Style-Guide#syntax--formatting) | 
-[HAML](https://github.com/Workable/workable/wiki/HTML-&-CSS-Style-Guide#haml) | 
-[Sass](https://github.com/Workable/workable/wiki/HTML-&-CSS-Style-Guide#sass) | 
-[BEM](https://github.com/Workable/workable/wiki/HTML-&-CSS-Style-Guide#bem) | 
-[File Organization](https://github.com/Workable/workable/wiki/HTML-&-CSS-Style-Guide#file-organization) | 
-[Recommended Reading](https://github.com/Workable/workable/wiki/HTML-&-CSS-Style-Guide#recommended-reading) | 
+[Syntax & Formatting](https://github.com/Workable/css-style-guide#syntax--formatting) | 
+[HAML](https://github.com/Workable/css-style-guide#haml) | 
+[Sass](https://github.com/Workable/css-style-guide#sass) | 
+[BEM](https://github.com/Workable/css-style-guide#bem) | 
+[File Organization](https://github.com/Workable/css-style-guide#file-organization) | 
+[Recommended Reading](https://github.com/Workable/css-style-guide#recommended-reading) | 
 
 ***
 
