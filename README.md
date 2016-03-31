@@ -113,14 +113,14 @@ This might seem excessive, but it really helps to keep the code easy to scan. Wh
 An example of a well written ruleset:
 
 ```scss
-  .selector,
-  .selector-secondary,
-  .selector[type="text"] {
-    padding: 15px;
-    margin: 0 0 15px;
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
-  }
+.selector,
+.selector-secondary,
+.selector[type="text"] {
+  padding: 15px;
+  margin: 0 0 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
+}
 ```
 
 ### Comments
@@ -321,72 +321,72 @@ A typical order for Sass rules is:
 Example:
 
 ```scss
-  .inline-form {
-    @extend %attachments;
-    border: 1px solid #ccc;
-    padding: 10px;
-    position: relative;
-    margin-bottom: 25px;
-    @include gradient-vertical(#fafafa, #f2f2f2);
-    @include border-radius(6px);
-    @include box-shadow(#{0 1px 2px black(0.05), inset 0 1px 0 #fff});
-      
-    form {
-      margin-bottom: 0;
-      background: none;
-      border: none;
-      @include box-shadow(none);
-    }
-  } 
+.inline-form {
+  @extend %attachments;
+  border: 1px solid #ccc;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 25px;
+  @include gradient-vertical(#fafafa, #f2f2f2);
+  @include border-radius(6px);
+  @include box-shadow(#{0 1px 2px black(0.05), inset 0 1px 0 #fff});
+    
+  form {
+    margin-bottom: 0;
+    background: none;
+    border: none;
+    @include box-shadow(none);
+  }
+} 
 ```
 
 Try to group related property declarations in four loose groups: **positioning**, **box model**, **typographic** and **visual**.
   
 ```scss
-  .declaration-order {
-    /* Positioning */
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
-  
-    /* Box-model */
-    display: block;
-    float: right;
-    width: 100px;
-    height: 100px;
-  
-    /* Typography */
-    font: normal 13px "Helvetica Neue", sans-serif;
-    line-height: 1.5;
-    color: #333;
-    text-align: center;
-  
-    /* Visual */
-    background-color: #f5f5f5;
-    border: 1px solid #e5e5e5;
-    border-radius: 3px;
-  
-    /* Misc */
-    opacity: 1;
-  }
+.declaration-order {
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  /* Box-model */
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+
+  /* Typography */
+  font: normal 13px "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+
+  /* Visual */
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+
+  /* Misc */
+  opacity: 1;
+}
 ```
 
 Feel free to remove line breaks from single declarations if they refer to the same attribute, e.g. for sprite organization. It's easier to group them visually and edit them.
 
 ```scss
-  .sprite {
-    display: inline-block;
-    width: 16px;
-    height: 15px;
-    background-image: url(../img/sprite.png);
-  }
+.sprite {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  background-image: url(../img/sprite.png);
+}
 
-  .icon           { background-position: 0 0; }
-  .icon-home      { background-position: 0 -20px; }
-  .icon-account   { background-position: 0 -40px; }
+.icon           { background-position: 0 0; }
+.icon-home      { background-position: 0 -20px; }
+.icon-account   { background-position: 0 -40px; }
 ```
 
 Avoid using shorthand notation unless you want to explicitly set all the available values at once. Setting all the values at once can lead to messy code full of unneeded overrides.
@@ -403,24 +403,24 @@ Check for excessive usage of these shorthands:
 Instead of this:
 
 ```scss
-  .element {
-    margin: 0 0 10px;
-    background: red;
-    background: url("image.jpg");
-    border-radius: 3px 3px 0 0;
-  }
+.element {
+  margin: 0 0 10px;
+  background: red;
+  background: url("image.jpg");
+  border-radius: 3px 3px 0 0;
+}
 ```
 
 Do this: 
 
 ```scss
-  .element {
-    margin-bottom: 10px;
-    background-color: red;
-    background-image: url("image.jpg");
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-  }
+.element {
+  margin-bottom: 10px;
+  background-color: red;
+  background-image: url("image.jpg");
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
 ```
 
 Keep your nesting to **3 levels maximum** to avoid specificity problems. Also, your nested rules shouldn't be more than 50 lines in height, any more than that and it has an impact on code legibility. Simplify your markup and refactor till that's possible.
@@ -430,20 +430,20 @@ When using BEM (see below), there's no need to nest modifier and elements in you
 Instead of this:
 
 ```scss
-  .box {
-    border: 1px solid #ccc;
-    
-    &.box--medium { width: 75%; }
-    &.box--large  { width: 90%; }
-  }
+.box {
+  border: 1px solid #ccc;
+  
+  &.box--medium { width: 75%; }
+  &.box--large  { width: 90%; }
+}
 ```
   
 Do this:
 
 ```scss
-  .box         { border: 1px solid #ccc; }
-  .box--medium { width: 75%; }
-  .box--large  { width: 90%; }
+.box         { border: 1px solid #ccc; }
+.box--medium { width: 75%; }
+.box--large  { width: 90%; }
 ```
 
 Use descriptive comments to separate sections in your stylesheets. For modules, don't forget to add a simple example of how it's used and its modifier classes.
@@ -451,29 +451,29 @@ Use descriptive comments to separate sections in your stylesheets. For modules, 
 Example:
 
 ```scss
-  /*
-    Main data row module. Usually combined with a .flag class, contains .flag__sections as cells
-    When a data-row is expanded, the expanded content is contained in another data-row directly above the first one
-  
-    :hover                -  a light yellow background is shown on hover and actions cell is shown
-    .data-row--expanded   -  light grey style, used when data row is expanded to show content
-    .data-row__form       -  styling for data rows that contain forms
-  */ 
-  
-  .data-row {
-    .
-    .
-  }
-  
-  .data-row--expanded {
-    .
-    .
-  }
-  
-  .data-row__form {
-    .
-    .
-  }
+/*
+  Main data row module. Usually combined with a .flag class, contains .flag__sections as cells
+  When a data-row is expanded, the expanded content is contained in another data-row directly above the first one
+
+  :hover                -  a light yellow background is shown on hover and actions cell is shown
+  .data-row--expanded   -  light grey style, used when data row is expanded to show content
+  .data-row__form       -  styling for data rows that contain forms
+*/ 
+
+.data-row {
+  .
+  .
+}
+
+.data-row--expanded {
+  .
+  .
+}
+
+.data-row__form {
+  .
+  .
+}
 ```
 
 ### Selector intent
@@ -513,9 +513,9 @@ Poor Selector Intent is one of the biggest reasons for headaches on CSS projects
 In Workable, we use a simplified BEM version that looks like this:
 
 ```scss
-  .block { }
-  .block__element { }
-  .block--modifier { }
+.block { }
+.block__element { }
+.block--modifier { }
 ```
 
 * `.block` is your basic component (reusable module) 
@@ -525,19 +525,19 @@ In Workable, we use a simplified BEM version that looks like this:
 A real life example in BEM:
 
 ```html
-	<div class="modal modal--dark">
-		<h1 class="modal__header">This is a modal header</h1>
-		<div class="modal__content">
-			This is the modal content
-		</div>
+<div class="modal modal--dark">
+	<h1 class="modal__header">This is a modal header</h1>
+	<div class="modal__content">
+		This is the modal content
 	</div>
+</div>
 ```
 
 ```scss
-	.modal { }
-	.modal--dark { }
-	.modal__header { }
-	.modal__content { }
+.modal { }
+.modal--dark { }
+.modal__header { }
+.modal__content { }
 ```
 
 * `.modal` is a basic modal window
@@ -551,13 +551,13 @@ Because it permits you to keep the relationship between the building blocks of a
 Compare this:
 
 ```scss
-  .button.primary.left
+.button.primary.left
 ```
 
 ...to this:
 
 ```scss
-  .button.button--primary.left
+.button.button--primary.left
 ```
 
 In the first case, the `.primary` class is ambiguous - what does it refer to? In the second case, you can clearly see that `.primary` is a modifier class of `.button` and it's probably used to tweak its colours.
@@ -565,12 +565,12 @@ In the first case, the `.primary` class is ambiguous - what does it refer to? In
 This all seems pretty straightforward, but BEM shines in real-life use. Consider this code block:
 
 ```html
-  <ul class="list">
-    <li>
-      <h2 class="title left">John Doe</h2>
-      <button class="btn small disabled right">Pending</button>
-    </li>
-  </ul>
+<ul class="list">
+  <li>
+    <h2 class="title left">John Doe</h2>
+    <button class="btn small disabled right">Pending</button>
+  </li>
+</ul>
 ```
 
 At a glance, you see a bunch of random classes that may be semantic but very abstract. For example, what's `.title`? How does `.small` affect `<button>`? You can't really see the relations between the classes.
@@ -578,12 +578,12 @@ At a glance, you see a bunch of random classes that may be semantic but very abs
 Now compare it to its BEM equivalent:
 
 ```html
-  <ul class="list">
-    <li>
-      <h2 class="list__title left">John Doe</h2>
-      <button class="btn btn--small btn--disabled right">Pending</button>
-    </li>
-  </ul>
+<ul class="list">
+  <li>
+    <h2 class="list__title left">John Doe</h2>
+    <button class="btn btn--small btn--disabled right">Pending</button>
+  </li>
+</ul>
 ```
   
 You can see at a glance that `.list__title` is a building block of `.list`, `.btn--small` and `.btn--disabled` are modifiers of the `.button` class while `.left` and `.right` are probably just generic utility classes that affect positioning.
@@ -596,9 +596,9 @@ Its advantages far outweight the minor inconvenience of typing slightly longer c
 A common question is why BEM uses double dashes and underscores for modifiers and elements. The answer is that single dashes can be used as a part of the class name, e.g.
 
 ```scss
-  .user-profile {}
-  .user-profile__avatar {}
-  .user-profile--expanded {}
+.user-profile {}
+.user-profile__avatar {}
+.user-profile--expanded {}
 ```
 
 ### When not to use BEM
@@ -606,14 +606,14 @@ A common question is why BEM uses double dashes and underscores for modifiers an
 Everything is a reusable module, till something isn't. There are loads of cases when you don't need to BEM something, like for helper classes:
 
 ```scss
-  // Positioning classes
-  .left   { float: left; }
-  .right  { float: right; } 
-  
-  // Fractional widths
-  .one-half   { width: 50%; }
-  .one-third  { width: 33%; }
-  .two-thirds { width: 66%; }
+// Positioning classes
+.left   { float: left; }
+.right  { float: right; } 
+
+// Fractional widths
+.one-half   { width: 50%; }
+.one-third  { width: 33%; }
+.two-thirds { width: 66%; }
 ```
 
 As you can see, this type of classes doesn't fall into any BEM category. The trick before using BEM is to ask "Are those objects related? Can any of them stand on its own?" 
@@ -623,11 +623,11 @@ For example, a logo could have a `.header__logo` class, but what if we wanted to
 Another BEM pitfall is very long class names. Since you can combine elements and modifiers, you can easily end up with code like this:
 
 ```html
-  <div class="block">
-    <div class="block__header">
-      <h1 class="block__header__title block__header__title--muted">John Doe</h1>
-    </div>
+<div class="block">
+  <div class="block__header">
+    <h1 class="block__header__title block__header__title--muted">John Doe</h1>
   </div>
+</div>
 ```
 
 There's no reason to chain elements and reflect the DOM in your class names. So instead of `.block__header__title`, you could just use `.block__title`. There's another benefit to that: what if you decide later to move the title outside the header? If you went with the first class name, you'd have to refactor your code. Keep your object relations loose.
@@ -662,32 +662,32 @@ Each major section has (or should have) its own manifest file. That's a single f
 A typical file organization for a section is:
 
 ```
-  backend/
-    base/
-      _buttons.css.scss
-      _forms.css.scss
-      _typography.css.scss
-      .
-      .
-      .
-    modules/
-      _boxes.css.scss
-      _blank-slates.css.scss
-      _dropdowns.css.scss
-      _fileuploads.css.scss
-      _filters.css.scss
-      .
-      .
-      .
-    sections/
-      _billing.css.scss
-      _job-editor.css.scss
-      _candidate-browser.css.scss
-      _account.css.scss
-      .
-      .
-      .
-  backend.css.scss
+backend/
+  base/
+    _buttons.css.scss
+    _forms.css.scss
+    _typography.css.scss
+    .
+    .
+    .
+  modules/
+    _boxes.css.scss
+    _blank-slates.css.scss
+    _dropdowns.css.scss
+    _fileuploads.css.scss
+    _filters.css.scss
+    .
+    .
+    .
+  sections/
+    _billing.css.scss
+    _job-editor.css.scss
+    _candidate-browser.css.scss
+    _account.css.scss
+    .
+    .
+    .
+backend.css.scss
 ```
 
 ### Sass variables
@@ -699,33 +699,33 @@ To group variables, you can use the reverse grouping naming convention, e.g. ins
 So instead of:
 
 ```scss
-  // Typography
-  
-  $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-  $fancy-font-family: "Myriad W08", "Segoe UI", Calibri, sans-serif;
+// Typography
 
-  $alpha-font-size: 20px !default;
-  $beta-font-size: 18px !default;
-  $gamma-font-size: 16px !default;
-  $delta-font-size: 14px !default;
-  $epsilon-font-size: 13px !default;
-  $zeta-font-size: 12px !default;
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$fancy-font-family: "Myriad W08", "Segoe UI", Calibri, sans-serif;
+
+$alpha-font-size: 20px !default;
+$beta-font-size: 18px !default;
+$gamma-font-size: 16px !default;
+$delta-font-size: 14px !default;
+$epsilon-font-size: 13px !default;
+$zeta-font-size: 12px !default;
 ```
 
 Use:
 
 ```scss
-  // Typography
-  
-  $font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-  $font-family-fancy: "Myriad W08", "Segoe UI", Calibri, sans-serif;
+// Typography
 
-  $font-size-alpha: 20px !default;
-  $font-size-beta: 18px !default;
-  $font-size-gamma: 16px !default;
-  $font-size-delta: 14px !default;
-  $font-size-epsilon: 13px !default;
-  $font-size-zeta: 12px !default;
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-fancy: "Myriad W08", "Segoe UI", Calibri, sans-serif;
+
+$font-size-alpha: 20px !default;
+$font-size-beta: 18px !default;
+$font-size-gamma: 16px !default;
+$font-size-delta: 14px !default;
+$font-size-epsilon: 13px !default;
+$font-size-zeta: 12px !default;
 ```
 
 Avoid using overly abstract variable names like $blue, $red - more descriptive names like $color-blue, $color-red are better for legibility and maintenance, even if they take longer to type.
@@ -737,18 +737,18 @@ If you use third-party frameworks like Compass, be sure to import only the parts
 So instead of:
 
 ```css
-  @import compass;
+@import compass;
 ```
   
 Use:
 
 ```css
-  @import "compass/reset";
-  @import "compass/utilities/general/clearfix";
-  @import "compass/css3/background-clip";
-  @import "compass/css3/box-sizing";
-  @import "compass/css3/images";
-  @import "compass/css3/opacity";
+@import "compass/reset";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/background-clip";
+@import "compass/css3/box-sizing";
+@import "compass/css3/images";
+@import "compass/css3/opacity";
 ```
 
 ### Including partials
