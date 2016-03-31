@@ -1,3 +1,5 @@
+#Workable HTML & CSS/Sass Styleguide
+
 This is the coding style guide we use for writing HAML & Sass in Workable. 
 
 A coding style guide is an essential tool to keep our code maintainable and scalable. Workable has a big codebase with lots of different aspects (core product, career pages, marketing website & resources) so we should try to make it easy for new developers and designers to dive into.
