@@ -38,9 +38,12 @@ Multi-line CSS is easier to scan, since your eye can keep tracking the left side
 There are some exceptions to that rule, which you'll probably stumble upon anyway. For example, you can use single-line CSS when repeated rulesets have one declaration each:
 
 ```scss
-.icon-w-eye         { background-position: 0 0; }
-.icon-w-pencil      { background-position: -16px 0; }
-.icon-w-delete      { background-position: -32px 0; }
+h1 { font-size: $font-size-large * 2.75; }
+h2 { font-size: $font-size-large * 2.25; }
+h3 { font-size: $font-size-large * 1.75; }
+h4 { font-size: $font-size-large * 1.25; }
+h5 { font-size: $font-size-large; }
+h6 { font-size: $font-size-large * 0.85; }
 ```
 
 When using multiple selectors, every individual selector should have its own line.
