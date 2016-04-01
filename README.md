@@ -1,6 +1,6 @@
 #Workable HTML & CSS/Sass Styleguide
 
-This is the coding style guide we use for writing HAML & Sass in Workable. 
+This is the coding style guide we use for writing CSS & Sass in Workable. 
 
 A coding style guide is an essential tool to keep our code maintainable and scalable. Workable has a big codebase with lots of different aspects (core product, career pages, marketing website & resources) so we should try to make it easy for new developers and designers to dive into.
 
@@ -11,7 +11,6 @@ A coding style guide is an essential tool to keep our code maintainable and scal
 Table of Contents | 
 ------------ | 
 [Syntax & Formatting](https://github.com/Workable/css-style-guide#syntax--formatting) | 
-[HAML](https://github.com/Workable/css-style-guide#haml) | 
 [Sass](https://github.com/Workable/css-style-guide#sass) | 
 [BEM](https://github.com/Workable/css-style-guide#bem) | 
 [File Organization](https://github.com/Workable/css-style-guide#file-organization) | 
@@ -213,92 +212,6 @@ Let's say we have a black footer with white links, and we try to add a twitter w
 
 This situation happens more than often in a fluid design system, so to keep things simple and as flat as possible, we're using classes everywhere.
 
-
-
-
-
-
-----------
-
-
-## HAML
-
-HAML is a markup language based on HTML that's used to cleanly and simply describe the HTML of any web document without the use of inline code.
-
-Instead of the traditional opening and closing tags, HAML uses strict indentation to denote structure. So instead of this ERB code:
-
-```erb
-<section class=”container”>
-  <h1><%= post.title %></h1>
-  <h2><%= post.subtitle %></h2>
-  <div class=”content”>
-    <%= post.content %>
-  </div>
-</section>
-```
-
-…you get this HAML code:
-
-```haml
-%section.container
-  %h1= post.title
-  %h2= post.subtitle
-  .content
-    = post.content
-```
-
-To add attributes to tags, instead of this normal HTML code:
-
-```html
-<input type="submit" value="Hello" />
-```
-
-…you can use this HAML code:
-
-```haml
-%input{ type: "submit", value: "Hello" }
-```
-
-It feels a little strange at first, but you'll get used to it after a while.
-
-Since `%div` is so common, you can just omit it altogether and just use the appropriate class or id. So this code:
-
-```haml
-.content Hello!
-```
-
-…gets translated into this HTML code:
-
-```html
-<div class="content">Hello!</div>
-```
-
-As we've mentioned above, you can create complex element structures just by using indentation. So to recreate this HTML block:
-
-```html
-<div id='content'>
-  <div class='left column'>
-    <h2>Welcome to our site!</h2>
-    <p><%= print_information %></p>
-  </div>
-  <div class="right column">
-    <%= render :partial => "sidebar" %>
-  </div>
-</div>
-```
-
-…you just need to write this:
-
-```haml
-#content
-  .left.column
-    %h2 Welcome to our site!
-    %p= print_information
-  .right.column
-    = render :partial => "sidebar"
-```
-
-Don't worry about messing it up, since HAML will warn you when you use inconsistent indentation. That's all there is to it!
 
 ### Naming conventions
 
