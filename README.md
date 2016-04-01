@@ -616,7 +616,7 @@ backend.css.scss
 
 You can use Sass variables for any value that you find yourself repeating in your code. Some common examples are brand hex colours, font families, grid variables and magic numbers like typical border-radii and padding.
 
-To group variables, you can use the reverse grouping naming convention, e.g. instead of `$primary-font-family` & $secondary-font-family, you can use $font-family-primary and $font-family-secondary. This makes visual grouping easier.
+To group variables, you can use the reverse grouping naming convention, e.g. instead of `$primary-font-family` & `$secondary-font-family`, you can use `$font-family-primary` and `$font-family-secondary`. This makes visual grouping easier.
 
 So instead of:
 
@@ -650,7 +650,7 @@ $font-size-epsilon: 13px !default;
 $font-size-zeta: 12px !default;
 ```
 
-Avoid using overly abstract variable names like $blue, $red - more descriptive names like $color-blue, $color-red are better for legibility and maintenance, even if they take longer to type.
+Avoid using overly abstract variable names like `$blue`, `$red` - more descriptive names like `$color-blue`, `$color-red` are better for legibility and maintenance, even if they take longer to type.
 
 ## Including third-party frameworks
 
