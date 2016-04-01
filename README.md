@@ -577,7 +577,7 @@ Style-wise, Workable is organized into major sections:
 * **Frontend**, which contains styles & themes for the career pages
 * **Offers**, which includes all marketing offer-specific styles
 
-**Note** Our resources site & blog are hosted in [WPEngine](http://wpengine.com), even though they're styled to look exactly like the rest of our marketing site. Since they're a separate Wordpress mini-site, we don't use Sass for their styling. You can [check their themes out on Github](https://github.com/Workable/workable-resources).
+**Note** Our resources site & blog are hosted in [WPEngine](http://wpengine.com), even though they're styled to look exactly like the rest of our marketing site. Since they're a separate Wordpress mini-site, we don't use Sass for their styling.
 
 Each major section has (or should have) its own manifest file. That's a single file, usually named `<section>.css.scss`, where import every partial you need. Manifest files should not contain any Sass code whatsoever. Their job is to bring together the different design elements. You can either include your Sass variables in the top of the manifest file or (recommended) create a separate `_variables.scss` partial and include it on top.
 
