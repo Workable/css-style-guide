@@ -1,6 +1,6 @@
 #Workable CSS/Sass Styleguide
 
-This is the coding style guide we use for writing CSS & Sass in Workable. 
+This is the coding style guide we use for writing CSS & Sass in [Workable](https://www.workable.com). 
 
 A coding style guide is an essential tool to keep our code maintainable and scalable. Workable has a big codebase with lots of different aspects (core product, career pages, marketing website & resources) so we should try to make it easy for new developers and designers to dive into.
 
