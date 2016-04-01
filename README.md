@@ -54,13 +54,6 @@ When using multiple selectors, every individual selector should have its own lin
 }
 ```
 
-There are some exceptions to this rule as well, for example, when you combine ultra-short selectors in a single line:
-
-```css
-h2, .h2 {
-  ...
-}
-```
 
 ### Whitespace
 
@@ -171,8 +164,22 @@ Don't forget to comment module elements as well:
   ...
 }
 ```
-
 If you don't get the syntax/terminology above, don't worry - there's a whole section dedicated to BEM below.
+
+Remember to use the syntax above to write a comment before a set of rules and not `//`. We use double slash only for inline comments (see below).
+
+```
+/*
+   Use this type
+*/
+.candidate {
+  ...
+}
+
+// Instead of this
+.candidate {
+  ...
+}
 
 #### Use inline comments for extras
 
@@ -185,6 +192,7 @@ Preprocessor (inline) comments can be used to specify the use of a specific decl
 ```
 
 Again, don't worry about going overboard with commenting, since comments and whitespace are removed during minification and aren't visible in production.
+
 
 ### Why not use IDs?
 
