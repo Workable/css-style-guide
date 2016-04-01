@@ -240,15 +240,12 @@ Example:
 .inline-form {
   @extend %attachments;
   @include gradient-vertical(#fafafa, #f2f2f2);
-  @include border-radius(6px);
-  @include box-shadow(#{0 1px 2px black(0.05), inset 0 1px 0 #fff});
   border: 1px solid #ccc;
   padding: 10px;
   position: relative;
   margin-bottom: 25px;
     
   form {
-  	@include box-shadow(none);
     margin-bottom: 0;
     background: none;
     border: none;
