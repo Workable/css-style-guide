@@ -1,4 +1,4 @@
-#Workable HTML & CSS/Sass Styleguide
+#Workable CSS/Sass Styleguide
 
 This is the coding style guide we use for writing CSS & Sass in Workable. 
 
