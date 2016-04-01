@@ -13,7 +13,7 @@ Table of Contents |
 [Syntax & Formatting](https://github.com/Workable/css-style-guide#syntax--formatting) | 
 [Sass](https://github.com/Workable/css-style-guide#sass) | 
 [BEM](https://github.com/Workable/css-style-guide#bem) | 
-[File Organization](https://github.com/Workable/css-style-guide#file-organization) | 
+[File Organization](https://github.com/Workable/css-style-guide#file-organization) | ι
 [Recommended Reading](https://github.com/Workable/css-style-guide#recommended-reading) | 
 
 ***
@@ -180,6 +180,7 @@ Remember to use the syntax above to write a comment before a set of rules and no
 .candidate {
   ...
 }
+```
 
 #### Use inline comments for extras
 
@@ -238,8 +239,8 @@ We use the SCSS flavour of Sass.
 A typical order for Sass rules is:
 
 * @extend at the top, so you can see right away which class or placeholder is extended
+* @include after @extends
 * regular styles next
-* @include after regular styles, so you can separate them visually from @extends
 * nested selectors last and nothing after them
 
 Example:
