@@ -513,7 +513,7 @@ You can see at a glance that `.list__title` is a building block of `.list`, `.bt
 ### Ewww, ugly!
 Some people are against BEM, claiming it makes code look ugly. We are not those people :) 
 
-Its advantages far outweight the minor inconvenience of typing slightly longer class names. You shouldn't dismiss it based solely on how it looks.
+Its advantages far outweigh the minor inconvenience of typing slightly longer class names. You shouldn't dismiss it based solely on how it looks.
 
 A common question is why BEM uses double dashes and underscores for modifiers and elements. The answer is that single dashes can be used as a part of the class name, e.g.
 
