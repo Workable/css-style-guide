@@ -134,6 +134,16 @@ Every Sass file or partial has to be titled properly. A file title looks like th
 \*-----------------------------*/
 ```
 
+If you wish, you can include some introductory comments to your file by adding a line break and a few sentences after the title, like this:
+
+```scss
+/*-----------------------------*\
+ * ICONS
+ * 
+ * This is a file about icons.
+\*-----------------------------*/
+```
+
 #### Document your modules
 
 Modules (or components) are reusable blocks of CSS code that follow a certain structure.  Each part of the module should be commented so that a developer coming after you can easily visualize the structure.
